@@ -367,15 +367,7 @@ function SalesOrders() {
 
   return (
     <div className="sales-orders-page">
-
       <div className="page-heading">
-        <div>
-          <h2>Sales Orders</h2>
-          <p>
-            Manage customer orders and stock movement.
-          </p>
-        </div>
-
         <button
           className="primary-button"
           onClick={() => {

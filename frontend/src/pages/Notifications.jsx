@@ -90,13 +90,6 @@ function Notifications() {
   return (
     <div className="notifications-page">
       <div className="notifications-header">
-        <div>
-          <h1>Notifications</h1>
-          <p>
-            Monitor system alerts and important inventory events.
-          </p>
-        </div>
-
         <div className="notification-summary">
           <span className="unread-count">
             {unreadCount}

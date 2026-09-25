@@ -92,14 +92,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-heading">
-        <div>
-          <h2>Overview</h2>
-          <p>
-            Here's what's happening with your inventory today.
-          </p>
-        </div>
-
+      <div className="dashboard-toolbar">
         <button
           className="refresh-button"
           onClick={fetchDashboard}

@@ -273,13 +273,6 @@ function StockTransfers() {
   return (
     <div className="stock-transfers-page">
       <div className="page-header">
-        <div>
-          <h1>Stock Transfers</h1>
-          <p>
-            Move inventory between warehouses and track transfer status.
-          </p>
-        </div>
-
         <button className="primary-button" onClick={openModal}>
           + New Transfer
         </button>

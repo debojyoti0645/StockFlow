@@ -204,15 +204,7 @@ function Customers() {
 
   return (
     <div className="customers-page">
-
       <div className="page-heading">
-        <div>
-          <h2>Customers</h2>
-          <p>
-            Manage customer information and contact details.
-          </p>
-        </div>
-
         <button
           className="primary-button"
           onClick={openAddForm}

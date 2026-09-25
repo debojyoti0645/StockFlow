@@ -119,15 +119,6 @@ function SalesForecast() {
 
   return (
     <div className="forecast-page">
-      <div className="forecast-header">
-        <div>
-          <h1>Sales Forecast</h1>
-          <p>
-            Estimate future product demand using historical sales data.
-          </p>
-        </div>
-      </div>
-
       {message && (
         <div className="forecast-message">
           {message}

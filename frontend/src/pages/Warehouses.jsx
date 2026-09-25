@@ -181,15 +181,7 @@ function Warehouses() {
 
   return (
     <div className="warehouses-page">
-
       <div className="page-heading">
-        <div>
-          <h2>Warehouses</h2>
-          <p>
-            Manage storage locations and warehouse managers.
-          </p>
-        </div>
-
         <button
           className="primary-button"
           onClick={openAddForm}

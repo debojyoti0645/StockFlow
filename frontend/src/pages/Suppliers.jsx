@@ -185,15 +185,7 @@ function Suppliers() {
 
   return (
     <div className="suppliers-page">
-
       <div className="page-heading">
-        <div>
-          <h2>Suppliers</h2>
-          <p>
-            Manage supplier information and contact details.
-          </p>
-        </div>
-
         <button
           className="primary-button"
           onClick={openAddForm}

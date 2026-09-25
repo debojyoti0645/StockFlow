@@ -79,13 +79,6 @@ function AuditLogs() {
   return (
     <div className="audit-page">
       <div className="audit-header">
-        <div>
-          <h1>Audit Logs</h1>
-          <p>
-            Track important actions performed throughout StockFlow.
-          </p>
-        </div>
-
         <button
           className="refresh-audit-button"
           onClick={loadLogs}

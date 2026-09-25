@@ -368,15 +368,7 @@ function PurchaseOrders() {
 
   return (
     <div className="purchase-orders-page">
-
       <div className="page-heading">
-        <div>
-          <h2>Purchase Orders</h2>
-          <p>
-            Create and manage supplier purchase orders.
-          </p>
-        </div>
-
         <button
           className="primary-button"
           onClick={() => {

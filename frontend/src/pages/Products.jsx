@@ -206,11 +206,6 @@ function Products() {
   return (
     <div className="products-page">
       <div className="page-heading">
-        <div>
-          <h2>Products</h2>
-          <p>Manage your product catalog and pricing.</p>
-        </div>
-
         <button className="primary-button" onClick={openAddForm}>
           + Add Product
         </button>

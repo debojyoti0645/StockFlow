@@ -181,16 +181,6 @@ function Inventory() {
 
   return (
     <div className="inventory-page">
-
-      <div className="page-heading">
-        <div>
-          <h2>Inventory</h2>
-          <p>
-            Monitor stock levels across all warehouses.
-          </p>
-        </div>
-      </div>
-
       {error && (
         <div className="inventory-error">
           {error}

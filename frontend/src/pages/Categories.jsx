@@ -174,15 +174,7 @@ function Categories() {
 
   return (
     <div className="categories-page">
-
       <div className="page-heading">
-        <div>
-          <h2>Categories</h2>
-          <p>
-            Organize your products into manageable categories.
-          </p>
-        </div>
-
         <button
           className="primary-button"
           onClick={openAddForm}
