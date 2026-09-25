@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+}
+
+.app-layout {
+  min-height: 100vh;
+}
+
+.main-area {
+  margin-left: 250px;
+  min-height: 100vh;
+}
+
+.page-content {
+  padding: 30px;
+}

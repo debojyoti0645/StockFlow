@@ -1,0 +1,265 @@
+.forecast-page {
+  padding: 28px;
+}
+
+.forecast-header {
+  margin-bottom: 24px;
+}
+
+.forecast-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #172033;
+}
+
+.forecast-header p {
+  margin: 6px 0 0;
+  color: #7a8495;
+}
+
+.forecast-message {
+  background: #eef6ff;
+  border: 1px solid #cfe3ff;
+  color: #245b9c;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.forecast-generator {
+  background: white;
+  border: 1px solid #e5e8ef;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 18px;
+}
+
+.generator-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 22px;
+}
+
+.generator-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 10px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.generator-heading h2 {
+  margin: 0;
+  color: #273142;
+  font-size: 18px;
+}
+
+.generator-heading p {
+  margin: 4px 0 0;
+  color: #7a8495;
+  font-size: 13px;
+}
+
+.forecast-form {
+  display: grid;
+  grid-template-columns: 1fr 220px auto;
+  gap: 15px;
+  align-items: end;
+}
+
+.forecast-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.forecast-field label {
+  color: #4b5565;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.forecast-field select,
+.forecast-field input {
+  border: 1px solid #d9dee8;
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: white;
+  outline: none;
+  color: #384152;
+}
+
+.generate-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.generate-button:hover {
+  background: #1d4ed8;
+}
+
+.generate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.forecast-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e8ef;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.forecast-info strong {
+  color: #384152;
+  font-size: 13px;
+}
+
+.forecast-info p {
+  margin: 4px 0 0;
+  color: #7a8495;
+  font-size: 12px;
+}
+
+.forecast-table-card {
+  background: white;
+  border: 1px solid #e5e8ef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e8ef;
+}
+
+.table-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  color: #273142;
+}
+
+.table-heading p {
+  margin: 4px 0 0;
+  color: #8a93a3;
+  font-size: 12px;
+}
+
+.refresh-forecast-button {
+  border: 1px solid #d9dee8;
+  background: white;
+  color: #2563eb;
+  padding: 8px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.refresh-forecast-button:hover {
+  background: #eff6ff;
+}
+
+.forecast-table-wrapper {
+  overflow-x: auto;
+}
+
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.forecast-table th {
+  background: #f8f9fc;
+  color: #697386;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 15px;
+  border-bottom: 1px solid #e5e8ef;
+  white-space: nowrap;
+}
+
+.forecast-table td {
+  padding: 14px 15px;
+  border-bottom: 1px solid #eef0f4;
+  color: #384152;
+  font-size: 13px;
+}
+
+.forecast-table tbody tr:hover {
+  background: #fafbfe;
+}
+
+.product-name {
+  font-weight: 600;
+  color: #273142;
+}
+
+.prediction-value {
+  display: inline-block;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.forecast-empty {
+  text-align: center;
+  padding: 50px !important;
+  color: #8a93a3 !important;
+}
+
+@media (max-width: 850px) {
+  .forecast-form {
+    grid-template-columns: 1fr;
+  }
+
+  .generate-button {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 700px) {
+  .forecast-page {
+    padding: 18px;
+  }
+
+  .table-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
