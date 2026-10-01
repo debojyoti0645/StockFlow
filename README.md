@@ -76,7 +76,7 @@ Purchase orders (`PURCHASE_IN`) and transfers (`TRANSFER_OUT` / `TRANSFER_IN`) f
 
 | Layer | Technology | Why |
 |---|---|---|
-| API | **FastAPI** | Fast, type-checked, auto-generates interactive docs at `/docs` |
+| API | **FastAPI** | Fast, type-checked, with built-in request validation |
 | Database access | **SQLAlchemy 2.0** | Models as Python classes, relationships, constraints |
 | Database | **MySQL** (via PyMySQL) | Reliable relational database for transactional data |
 | Migrations | **Alembic** | Versioned schema changes (10 migration files) |
@@ -84,6 +84,7 @@ Purchase orders (`PURCHASE_IN`) and transfers (`TRANSFER_OUT` / `TRANSFER_IN`) f
 | Auth | **JWT** (python-jose) + **bcrypt** (passlib) | Stateless login, hashed passwords |
 | Frontend | **React 19** + **Vite** | Fast dev server, component-based UI |
 | Linting | **Oxlint** | Frontend code quality |
+| API testing | **Postman** | Manual testing of all endpoints |
 
 ---
 
@@ -137,7 +138,14 @@ Key design decisions:
 
 ## 7. API overview
 
-Interactive docs are available at **http://127.0.0.1:8000/docs** once the server is running.
+I tested every endpoint manually with **Postman**. FastAPI also generates Swagger docs automatically at `http://127.0.0.1:8000/docs` if you prefer a browser view, but I did not use them during development.
+
+### Testing with Postman
+
+1. Send `POST http://127.0.0.1:8000/auth/login` with a JSON body: `{"email": "admin@stockflow.com", "password": "admin123"}`.
+2. Copy the `access_token` from the response.
+3. For every other request, set **Authorization > Bearer Token** and paste the token.
+4. Typical flow I tested: create a category, product, warehouse and supplier, then a purchase order, then `POST /purchase-orders/{id}/receive`. Check `GET /inventory/` to see stock go up, then create and complete a sales order to see it go down and the low-stock notification appear.
 
 | Resource | Endpoints |
 |---|---|
@@ -233,7 +241,7 @@ I'd rather be upfront about what is and isn't finished. These are the next thing
 | Low-stock alerts go to the first admin user | Notify all relevant users, per-user preferences |
 | Orders have no cancel flow yet | Add `CANCEL` with reserved-stock release |
 | Frontend switches pages with component state and calls the API with `fetch` in each page | Add React Router, a shared API client, and token-expiry handling |
-| No automated tests | Add pytest tests for the order / transfer stock logic first, since that is the most critical code |
+| API tested manually in Postman only, with no automated tests | Add pytest tests for the order / transfer stock logic first, since that is the most critical code |
 | CORS allows only `localhost:5173` | Make allowed origins configurable |
 
 ---
@@ -245,6 +253,7 @@ I'd rather be upfront about what is and isn't finished. These are the next thing
 - Structuring a backend in layers (routes, schemas, models, services) so logic isn't duplicated.
 - Securing an API with **hashed passwords and JWT tokens**.
 - Connecting a **React** frontend to a REST API with authentication.
+- Testing a REST API end to end with **Postman**, including token-based auth and multi-step flows.
 
 ---
 
