@@ -11,6 +11,10 @@
   z-index: 100;
 }
 
+.sidebar-logo-text h2 {
+  color: white;
+}
+
 .sidebar-logo {
   height: 80px;
   padding: 0 22px;

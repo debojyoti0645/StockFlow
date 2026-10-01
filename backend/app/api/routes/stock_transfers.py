@@ -237,15 +237,12 @@ def complete_stock_transfer(
             db.add(destination_inventory)
             db.flush()
 
-        # Remove stock from source warehouse
         source_inventory.quantity -= item.quantity
         
         check_low_stock(db, source_inventory)
 
-        # Add stock to destination warehouse
         destination_inventory.quantity += item.quantity
 
-        # Transfer OUT transaction
         transfer_out = InventoryTransaction(
             product_id=item.product_id,
             warehouse_id=transfer.source_warehouse_id,
@@ -255,7 +252,6 @@ def complete_stock_transfer(
             notes=f"Stock transferred to warehouse {transfer.destination_warehouse_id}"
         )
 
-        # Transfer IN transaction
         transfer_in = InventoryTransaction(
             product_id=item.product_id,
             warehouse_id=transfer.destination_warehouse_id,

@@ -22,7 +22,7 @@ function Sidebar({ activePage, setActivePage }) {
       <div className="sidebar-logo">
         <div className="sidebar-logo-icon">SF</div>
 
-        <div>
+        <div className="sidebar-logo-text">
           <h2>StockFlow</h2>
           <span>Inventory System</span>
         </div>

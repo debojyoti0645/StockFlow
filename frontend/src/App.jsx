@@ -2,20 +2,20 @@ import { useState } from "react";
 
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
+import AuditLogs from "./pages/AuditLogs";
 import Categories from "./pages/Categories";
+import Customers from "./pages/Customers";
 import Dashboard from "./pages/Dashboard";
 import Inventory from "./pages/Inventory";
 import Login from "./pages/Login";
+import Notifications from "./pages/Notifications";
 import Products from "./pages/Products";
+import PurchaseOrders from "./pages/PurchaseOrders";
+import SalesForecast from "./pages/SalesForecast";
+import SalesOrders from "./pages/SalesOrders";
+import StockTransfers from "./pages/StockTransfers";
 import Suppliers from "./pages/Suppliers";
 import Warehouses from "./pages/Warehouses";
-import PurchaseOrders from "./pages/PurchaseOrders";
-import SalesOrders from "./pages/SalesOrders";
-import Customers from "./pages/Customers";
-import StockTransfers from "./pages/StockTransfers";
-import Notifications from "./pages/Notifications";
-import AuditLogs from "./pages/AuditLogs";
-import SalesForecast from "./pages/SalesForecast";
 
 import "./App.css";
 
@@ -27,6 +27,14 @@ function App() {
   const [activePage, setActivePage] = useState("Dashboard");
 
   function handleLogout() {
+    const confirmed = window.confirm(
+      "Are you sure you want to log out? You may be signed out of this session."
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
     localStorage.removeItem("access_token");
     setIsLoggedIn(false);
   }
@@ -46,6 +54,7 @@ function App() {
         <Topbar
           activePage={activePage}
           onLogout={handleLogout}
+          onNotificationsClick={() => setActivePage("Notifications")}
         />
 
         <main className="page-content">

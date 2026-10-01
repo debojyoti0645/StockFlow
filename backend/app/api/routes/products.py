@@ -43,9 +43,7 @@ def create_product(
             detail="Category not found"
         )
 
-    # Temporary unique SKU.
-    # We need this because the database currently requires
-    # the SKU field to have a value.
+    # The SKU column is non-null, so assign a temporary value before flush.
     temporary_sku = f"TEMP-{uuid4().hex}"
 
     product = Product(
@@ -59,10 +57,8 @@ def create_product(
 
     db.add(product)
 
-    # Get the automatically generated product ID
     db.flush()
 
-    # Generate the final SKU from the product ID
     product.sku = f"PRD-{product.id:05d}"
 
     db.commit()
@@ -141,9 +137,6 @@ def update_product(
             )
 
         product.category_id = product_data.category_id
-
-    # SKU is intentionally NOT updated.
-    # SKU is generated automatically and remains fixed.
 
     if product_data.name is not None:
         product.name = product_data.name
